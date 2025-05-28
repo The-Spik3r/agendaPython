@@ -5,7 +5,6 @@ from .UserView import UserView
 
 
 class MainMenu:
-
     def menu(self):
         while True:
             system("cls")
@@ -13,7 +12,8 @@ class MainMenu:
             print("1. Login de usuario")
             print("2. Registro de usuario")
             print("3. Listar Usuarios")
-            print("4. Salir del programa")
+            print("4. dar de baja un usuario")
+            print("5. Salir del programa")
             print("-" * 50)
             option = input("Ingrese una opcion: ")
             if option == "1":
@@ -32,10 +32,12 @@ class MainMenu:
                 user_view = UserView()
                 validation = user_view.list_users()
             elif option == "4":
-                break
-            else:
-                print(" Opcion incorrecta ".center(50, "!"))
+                user_view = UserView()
+                validation = user_view.remove_user_menu()
+            elif option == "5":
+                print(" Saliendo del programa... ".center(50, "#"))
                 input(" Presione enter para continuar ".center(50, "!"))
+                break
 
 
 if __name__ == "__main__":
