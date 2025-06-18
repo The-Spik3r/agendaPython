@@ -26,6 +26,10 @@ class UserController:
     def add_user(self, user):
         user_repository = UserRepository()
         user_repository.add_user(user)
+    
+    def remove_user(self, user):
+        user_repository = UserRepository()
+        user_repository.remove_user(user)
 
     def login(self, user):
         user_repository = UserRepository()

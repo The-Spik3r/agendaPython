@@ -32,8 +32,16 @@ class MainMenu:
                 user_view = UserView()
                 validation = user_view.list_users()
             elif option == "4":
-                user_view = UserView()
-                validation = user_view.remove_user_menu()
+                 user_view = UserView()
+                 validation = user_view.login_menu()
+                 if validation[0] == True:
+                    user = validation[1]
+                    print(user)
+                    UserView(user).remove_user_menu()
+                 else:
+                    print(" Usuario o contraseña incorrecta ".center(50, "!"))
+                    input(" Presione enter para continuar ".center(50, "!"))
+                
             elif option == "5":
                 print(" Saliendo del programa... ".center(50, "#"))
                 input(" Presione enter para continuar ".center(50, "!"))

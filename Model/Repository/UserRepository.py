@@ -49,3 +49,20 @@ class UserRepository:
     def add_user(self, user):
         with open(self.file_path, "a") as file:
             file.write(f"{user.username},{user.password},{user.email},{user.name},{user.surname},1\n")
+            
+    def update_user(self, user, new_state=1):
+        lines = []
+        with open(self.file_path, "r") as file:
+            lines = file.readlines()
+        with open(self.file_path, "w") as file:
+            for row in lines:
+                user_data = row.strip().split(",")
+                if len(user_data) == 6 and user_data[0] == user.username:
+                    user_data[5] = str(new_state)
+                    file.write(",".join(user_data) + "\n")
+                else:
+                    file.write(row)
+    
+    def remove_user(self, user):
+        self.update_user(user, 0)
+        

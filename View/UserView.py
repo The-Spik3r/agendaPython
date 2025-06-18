@@ -2,10 +2,14 @@ from os import system
 from Controllers.UserController import UserController
 from Model.DTO.UserForCreation import UserForCreation
 from Model.DTO.UserForLogin import UserForLogin
+from Model.DTO.UserForView import UserForView
 
 
 class UserView:
-
+    
+    def __init__(self, user =None):
+        self.user_logged = user
+        
     def add_user_menu(self):
         system("cls")
         print(" Alta de usuario ".center(50, "#"))
@@ -48,3 +52,15 @@ class UserView:
             print(user)
         print("#" * 50)
         input(" Presione enter para continuar ".center(50, "!"))
+        
+    def remove_user_menu(self):
+        system("cls")
+        print(" Baja de usuario ".center(50, "#"))
+        print("-" * 50)
+        print("-" * 50)
+        user_controller = UserController()
+        user_controller.remove_user(self.user_logged)
+        print(" Usuario dado de baja correctamente ".center(50, "!"))
+        input(" Presione enter para continuar ".center(50, "!"))
+        
+
