@@ -1,4 +1,4 @@
-user1,user1,user1@mail.com,Steve,Rogers,0
+user1,user1,user1@mail.com,Steve,Rogers,1
 user2,user2,user2@mail.com,Bruce,Wayne,1
 user3,user3,user3@mail.com,Jean Luc,Pickard,1
 user4,user4,user4@mail.com,Bruce,Baner,1

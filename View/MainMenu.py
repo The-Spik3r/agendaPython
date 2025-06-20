@@ -36,7 +36,6 @@ class MainMenu:
                  validation = user_view.login_menu()
                  if validation[0] == True:
                     user = validation[1]
-                    print(user)
                     UserView(user).remove_user_menu()
                  else:
                     print(" Usuario o contraseña incorrecta ".center(50, "!"))
